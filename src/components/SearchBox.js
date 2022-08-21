@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FormGroup, Label, Input, Button } from 'reactstrap';
 export default function SearchBox() {
   const [keywords, SetKeywords] = useState();
   const [places, SetPlace] = useState();
@@ -9,23 +10,30 @@ export default function SearchBox() {
   };
   return (
     <div className="searchbox">
-      <div>
-        <input
+      <FormGroup>
+        <Label for="exampleSearch">Search</Label>
+        <Input
           type="search"
           name="keywords"
           placeholder="Search for Keywords"
-          onChange={(e) => SetKeywords((p) => e.target.value)}
+          onChange={(e) => SetKeywords(e.target.value)}
+          placeholder="search placeholder"
+          type="search"
         />
-        <input
+      </FormGroup>
+      <FormGroup>
+        <Label for="exampleSearch">Search</Label>
+        <Input
           type="search"
           name="places"
           placeholder="Neighbour City,State,Country"
-          onChange={(e) => SetPlace((p) => e.target.value)}
+          onChange={(e) => SetPlace(e.target.value)}
         />
-        <button type="submit" onClick={onSearch}>
-          Search
-        </button>
-      </div>
+      </FormGroup>
+
+      <Button type="submit" onClick={onSearch}>
+        Search
+      </Button>
     </div>
   );
 }

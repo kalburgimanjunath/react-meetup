@@ -48,5 +48,13 @@ p {
   display: flex;
 }
 .ads {
-  width: 200px;
+  width: 150px;
+}
+.searchbox {
+  display: flex;
+}
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
